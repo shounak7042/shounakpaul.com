@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shounak Paul - YouTube Creator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d2?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 60px auto;
+      padding: 30px 20px;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 20px;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffffffcc;
+      margin-bottom: 20px;
+      transition: transform 0.4s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .btn, .social-links a {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 18px;
+      text-decoration: none;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .btn {
+      background: #FF0000;
+    }
+
+    .social-links a.instagram { background: #E1306C; }
+    .social-links a.threads   { background: #000; }
+    .social-links a.facebook  { background: #3b5998; }
+    .social-links a.telegram  { background: #0088cc; }
+
+    .btn:hover, .social-links a:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="profile.jpg" alt="Shounak Paul" class="profile-pic" />
+    <h1>Shounak Paul</h1>
+    <p>Hey, I'm <strong>Shounak Paul</strong>, a content creator who loves making cool, crisp, and useful videos.  
+    My channel is all about <strong>tech tips</strong>, <strong>mobile tricks</strong>, <strong>how-to tutorials</strong>, and creative Gen Z vibes.  
+    Whether you're looking to level up your phone skills or just chill with fun digital hacks — this is your spot.  
+    Let’s grow together!</p>
+
+    <a href="https://youtube.com/@shounakpaul-iq1dv?si=yv8VMY5KFEao_WT8" class="btn" target="_blank">🔔 Subscribe on YouTube</a>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/whynot_shounak" class="instagram" target="_blank">📸 Instagram</a>
+      <a href="https://www.threads.net/@whynot_shounak" class="threads" target="_blank">🧵 Threads</a>
+      <a href="https://www.facebook.com/saunak.paul.73" class="facebook" target="_blank">📘 Facebook</a>
+      <a href="https://t.me/whynot_shounak" class="telegram" target="_blank">📲 Telegram</a>
+    </div>
+  </div>
+</body>
+</html>
