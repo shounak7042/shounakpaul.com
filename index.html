@@ -23,6 +23,7 @@
       background-size: cover;
       color: var(--text-color);
       line-height: 1.6;
+      overflow-x: hidden;
     }
     
     header {
@@ -35,22 +36,35 @@
       top: 0;
       z-index: 100;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      animation: slideDown 0.5s ease-out;
+    }
+    
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
     }
     
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--accent-color);
+      transition: all 0.3s ease;
+    }
+    
+    .logo:hover {
+      text-shadow: 0 0 10px rgba(79, 195, 247, 0.7);
+      transform: scale(1.05);
     }
     
     .menu-icon {
       cursor: pointer;
       font-size: 1.8rem;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
     }
     
     .menu-icon:hover {
-      transform: scale(1.1);
+      transform: scale(1.2) rotate(90deg);
+      color: var(--accent-color);
     }
     
     nav {
@@ -77,11 +91,29 @@
       text-decoration: none;
       transition: all 0.3s ease;
       font-weight: 600;
+      position: relative;
     }
     
     nav a:hover {
       background: var(--primary-color);
       color: white;
+      padding-left: 2.5rem;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 80%;
+      left: 10%;
     }
     
     .container {
@@ -93,6 +125,12 @@
       text-align: center;
       padding: 0 2rem;
       position: relative;
+      animation: fadeInScale 0.8s ease-out;
+    }
+    
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
     }
     
     .profile-pic {
@@ -102,13 +140,20 @@
       object-fit: cover;
       border: 5px solid var(--accent-color);
       box-shadow: 0 0 30px rgba(79, 195, 247, 0.6);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.5s ease;
       margin-bottom: 1.5rem;
+      animation: pulse 2s infinite alternate;
+    }
+    
+    @keyframes pulse {
+      from { box-shadow: 0 0 30px rgba(79, 195, 247, 0.6); }
+      to { box-shadow: 0 0 50px rgba(79, 195, 247, 0.9); }
     }
     
     .profile-pic:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(79, 195, 247, 0.8);
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 0 50px rgba(79, 195, 247, 0.9);
+      animation: none;
     }
     
     h1 {
@@ -119,6 +164,12 @@
       background-clip: text;
       color: transparent;
       font-weight: 700;
+      animation: textGlow 2s infinite alternate;
+    }
+    
+    @keyframes textGlow {
+      from { text-shadow: 0 0 5px rgba(79, 195, 247, 0.3); }
+      to { text-shadow: 0 0 15px rgba(79, 195, 247, 0.7); }
     }
     
     .tagline {
@@ -126,6 +177,12 @@
       margin-bottom: 2rem;
       max-width: 700px;
       opacity: 0.9;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .explore {
@@ -137,20 +194,54 @@
       cursor: pointer;
       font-size: 1rem;
       border-radius: 50px;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       font-weight: 600;
+      animation: bounce 2s infinite;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
     
     .explore:hover {
       background: var(--accent-color);
       color: #000;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+      animation: none;
+    }
+    
+    .explore::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .explore:hover::before {
+      left: 100%;
     }
     
     .section {
       padding: 5rem 2rem;
       background-color: var(--bg-dark);
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    
+    .section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
     }
     
     .section h2 {
@@ -169,12 +260,26 @@
       background: var(--accent-color);
       margin: 0.5rem auto;
       border-radius: 2px;
+      animation: expand 0.8s ease-out;
+    }
+    
+    @keyframes expand {
+      from { width: 0; opacity: 0; }
+      to { width: 80px; opacity: 1; }
     }
     
     .section p {
       max-width: 800px;
-      margin: 0 auto;
+      margin: 1.5rem auto;
       font-size: 1.1rem;
+      animation: fadeInParagraphs 0.6s ease-out forwards;
+      animation-delay: calc(var(--paragraph-index) * 0.2s);
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    
+    @keyframes fadeInParagraphs {
+      to { opacity: 1; transform: translateY(0); }
     }
     
     .social-icons {
@@ -195,13 +300,30 @@
       border-radius: 50%;
       color: var(--text-color);
       font-size: 1.5rem;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: socialIconEntrance 0.6s ease-out forwards;
+      animation-delay: calc(var(--icon-index) * 0.1s);
+      opacity: 0;
+      transform: scale(0.5) rotate(180deg);
+    }
+    
+    @keyframes socialIconEntrance {
+      to { opacity: 1; transform: scale(1) rotate(0); }
     }
     
     .social-icons a:hover {
       background: var(--accent-color);
       color: #000;
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.1) rotate(5deg);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* Custom Threads icon */
+    .fa-threads {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M5 3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5h14v7h2V5c0-1.1-.9-2-2-2H5zm6 11v3h3v-3h-3zm7-1v8h3v-8h-3z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 60%;
     }
     
     footer {
@@ -209,6 +331,7 @@
       padding: 1.5rem;
       background: rgba(0,0,0,0.9);
       font-size: 0.9rem;
+      animation: fadeIn 1s ease-out;
     }
     
     @media (min-width: 768px) {
@@ -236,6 +359,10 @@
         margin-left: 1.5rem;
         padding: 0.5rem 1rem;
       }
+      
+      nav a:hover {
+        padding-left: 1rem;
+      }
     }
   </style>
 </head>
@@ -244,33 +371,39 @@
     <div class="logo">Shounak Paul</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <nav id="menu">
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('about')">About</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
     </nav>
   </header>
 
-  <div class="container">
+  <div id="home" class="container">
     <img src="profile.jpg" alt="Shounak Paul" class="profile-pic" />
     <h1>Shounak Paul</h1>
     <p class="tagline">Tech Enthusiast | Content Creator | Student</p>
-    <button class="explore" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+    <button class="explore" onclick="showSection('about')">
       Explore My Work
     </button>
   </div>
 
   <div id="about" class="section">
     <h2>About Me</h2>
-    <p>Hello! I'm Shounak Paul, a passionate student and tech enthusiast dedicated to making technology accessible to everyone. On my YouTube channel, I break down complex tech concepts into simple, easy-to-understand explanations, create helpful tutorials, and share fascinating facts about apps, gadgets, and the latest tech trends. My goal is to help people feel more confident using technology in their daily lives. Let's explore the exciting world of technology together!</p>
+    <p style="--paragraph-index: 1;">🎥 Hey there! I'm Shounak, a passionate content creator and student from Kolkata, West Bengal.</p>
+    <p style="--paragraph-index: 2;">Currently studying in Class 11 Science at Saltlake Point School, I started this YouTube channel to share the videos I make in my free time. From fun experiments to tech content and creative edits, this channel is my space to explore, express, and evolve.</p>
+    <p style="--paragraph-index: 3;">I'm always looking forward to trying new ideas—especially around technology and innovation. If you're into cool tech stuff and chill vibes, make sure to subscribe and join the journey!</p>
+    <p style="--paragraph-index: 4;">📍 Based in Shyambazar, Kolkata<br>
+    ⚙️ Upcoming Tech Videos | Creative Content | Passion Projects</p>
   </div>
 
   <div id="contact" class="section">
     <h2>Connect With Me</h2>
     <div class="social-icons">
-      <a href="https://youtube.com/@shounakpaul-iq1dv" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.instagram.com/whynot_shounak" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.threads.net/@whynot_shounak" target="_blank" title="Threads"><i class="fab fa-threads"></i></a>
-      <a href="https://www.facebook.com/saunak.paul.73" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://t.me/whynot_shounak" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://youtube.com/@shounakpaul-iq1dv" target="_blank" title="YouTube" style="--icon-index: 1;"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/whynot_shounak" target="_blank" title="Instagram" style="--icon-index: 2;"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.threads.net/@whynot_shounak" target="_blank" title="Threads" style="--icon-index: 3;"><i class="fab fa-threads"></i></a>
+      <a href="https://wa.me/qr/NCZNLJWIRL44M1" target="_blank" title="WhatsApp" style="--icon-index: 4;"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/saunak.paul.73" target="_blank" title="Facebook" style="--icon-index: 5;"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/whynot_shounak" target="_blank" title="Telegram" style="--icon-index: 6;"><i class="fab fa-telegram-plane"></i></a>
     </div>
   </div>
 
@@ -279,22 +412,72 @@
   </footer>
 
   <script>
+    // Show home section by default
+    document.addEventListener('DOMContentLoaded', function() {
+      showSection('home');
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // Set paragraph animations
+      const paragraphs = document.querySelectorAll('#about p');
+      paragraphs.forEach((p, index) => {
+        p.style.setProperty('--paragraph-index', index + 1);
+      });
+      
+      // Set social icon animations
+      const socialIcons = document.querySelectorAll('.social-icons a');
+      socialIcons.forEach((icon, index) => {
+        icon.style.setProperty('--icon-index', index + 1);
+      });
+    });
+
     function toggleMenu() {
       const menu = document.getElementById("menu");
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
     
-    // Update copyright year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
-    
-    // Close menu when clicking on a link
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          document.getElementById('menu').style.display = 'none';
-        }
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
       });
-    });
+      document.querySelector('.container').style.display = 'none';
+      
+      // Show selected section
+      if (sectionId === 'home') {
+        document.querySelector('.container').style.display = 'flex';
+        document.querySelector('.container').style.animation = 'fadeInScale 0.8s ease-out';
+      } else {
+        const section = document.getElementById(sectionId);
+        section.classList.add('active');
+        
+        // Reset animations for elements in the section
+        if (sectionId === 'about') {
+          const paragraphs = section.querySelectorAll('p');
+          paragraphs.forEach((p, index) => {
+            p.style.animation = 'none';
+            setTimeout(() => {
+              p.style.animation = `fadeInParagraphs 0.6s ease-out ${index * 0.2}s forwards`;
+            }, 10);
+          });
+        } else if (sectionId === 'contact') {
+          const icons = section.querySelectorAll('.social-icons a');
+          icons.forEach((icon, index) => {
+            icon.style.animation = 'none';
+            setTimeout(() => {
+              icon.style.animation = `socialIconEntrance 0.6s ease-out ${index * 0.1}s forwards`;
+            }, 10);
+          });
+        }
+      }
+      
+      // Close menu on mobile after selection
+      if (window.innerWidth < 768) {
+        document.getElementById('menu').style.display = 'none';
+      }
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   </script>
 </body>
-</html>
+</html>            
