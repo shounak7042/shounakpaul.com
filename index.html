@@ -430,35 +430,18 @@
     
     .social-icons a.threads {
       position: relative;
+      background-image: url('threads.webp');
+      background-size: 60%;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     
     .social-icons a.threads i {
-      position: relative;
-      z-index: 1;
+      display: none;
     }
     
-    .social-icons a.threads::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 24px;
-      height: 24px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M5 3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h7v-2H5V5h14v7h2V5c0-1.1-.9-2-2-2H5zm6 11v3h3v-3h-3zm7-1v8h3v-8h-3z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .social-icons a.threads:hover::before {
-      opacity: 1;
-    }
-    
-    .social-icons a.threads:hover i {
-      opacity: 0;
+    .social-icons a.twitter {
+      background-color: #000000;
     }
     
     footer {
@@ -596,12 +579,11 @@
     <div class="social-icons">
       <a href="https://youtube.com/@shounakpaul-iq1dv" target="_blank" title="YouTube" style="--icon-index: 1;"><i class="fab fa-youtube"></i></a>
       <a href="https://www.instagram.com/whynot_shounak" target="_blank" title="Instagram" style="--icon-index: 2;"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.threads.net/@whynot_shounak" target="_blank" title="Threads" style="--icon-index: 3;" class="threads">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://wa.me/qr/NCZNLJWIRL44M1" target="_blank" title="WhatsApp" style="--icon-index: 4;"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/saunak.paul.73" target="_blank" title="Facebook" style="--icon-index: 5;"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://t.me/whynot_shounak" target="_blank" title="Telegram" style="--icon-index: 6;"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://www.threads.net/@whynot_shounak" target="_blank" title="Threads" style="--icon-index: 3;" class="threads"></a>
+      <a href="https://x.com/pshounak940?s=09" target="_blank" title="Twitter" style="--icon-index: 4;" class="twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://wa.me/qr/NCZNLJWIRL44M1" target="_blank" title="WhatsApp" style="--icon-index: 5;"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/saunak.paul.73" target="_blank" title="Facebook" style="--icon-index: 6;"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/whynot_shounak" target="_blank" title="Telegram" style="--icon-index: 7;"><i class="fab fa-telegram-plane"></i></a>
     </div>
   </div>
 
