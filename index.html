@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8H681LF3Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F8H681LF3Y');
+  </script>
+  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shounak Paul - Tech Content Creator</title>
@@ -14,7 +23,7 @@
       --text-color: #f8f9fa;
       --bg-dark: rgba(0, 0, 0, 0.85);
     }
-    
+
     body {
       margin: 0;
       font-family: 'Raleway', sans-serif;
@@ -25,7 +34,7 @@
       line-height: 1.6;
       overflow-x: hidden;
     }
-    
+
     header {
       display: flex;
       justify-content: space-between;
@@ -38,35 +47,35 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       animation: slideDown 0.5s ease-out;
     }
-    
+
     @keyframes slideDown {
       from { transform: translateY(-100%); }
       to { transform: translateY(0); }
     }
-    
+
     .logo {
       font-size: 1.5rem;
       font-weight: 700;
       color: var(--accent-color);
       transition: all 0.3s ease;
     }
-    
+
     .logo:hover {
       text-shadow: 0 0 10px rgba(79, 195, 247, 0.7);
       transform: scale(1.05);
     }
-    
+
     .menu-icon {
       cursor: pointer;
       font-size: 1.8rem;
       transition: all 0.3s ease;
     }
-    
+
     .menu-icon:hover {
       transform: scale(1.2) rotate(90deg);
       color: var(--accent-color);
     }
-    
+
     nav {
       display: none;
       flex-direction: column;
@@ -79,12 +88,12 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       animation: fadeIn 0.3s ease;
     }
-    
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     nav a {
       padding: 1rem 2rem;
       color: var(--text-color);
@@ -93,13 +102,13 @@
       font-weight: 600;
       position: relative;
     }
-    
+
     nav a:hover {
       background: var(--primary-color);
       color: white;
       padding-left: 2.5rem;
     }
-    
+
     nav a::after {
       content: '';
       position: absolute;
@@ -110,12 +119,12 @@
       background: var(--accent-color);
       transition: all 0.3s ease;
     }
-    
+
     nav a:hover::after {
       width: 80%;
       left: 10%;
     }
-    
+
     .container {
       display: flex;
       flex-direction: column;
@@ -127,12 +136,12 @@
       position: relative;
       animation: fadeInScale 0.8s ease-out;
     }
-    
+
     @keyframes fadeInScale {
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
-    
+
     .profile-pic {
       border-radius: 50%;
       width: 220px;
@@ -144,18 +153,18 @@
       margin-bottom: 1.5rem;
       animation: pulse 2s infinite alternate;
     }
-    
+
     @keyframes pulse {
       from { box-shadow: 0 0 30px rgba(79, 195, 247, 0.6); }
       to { box-shadow: 0 0 50px rgba(79, 195, 247, 0.9); }
     }
-    
+
     .profile-pic:hover {
       transform: scale(1.05) rotate(5deg);
       box-shadow: 0 0 50px rgba(79, 195, 247, 0.9);
       animation: none;
     }
-    
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
@@ -166,12 +175,12 @@
       font-weight: 700;
       animation: textGlow 2s infinite alternate;
     }
-    
+
     @keyframes textGlow {
       from { text-shadow: 0 0 5px rgba(79, 195, 247, 0.3); }
       to { text-shadow: 0 0 15px rgba(79, 195, 247, 0.7); }
     }
-    
+
     .tagline {
       font-size: 1.2rem;
       margin-bottom: 2rem;
@@ -179,12 +188,12 @@
       opacity: 0.9;
       animation: fadeInUp 1s ease-out 0.3s both;
     }
-    
+
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     .explore {
       margin-top: 1.5rem;
       padding: 0.75rem 2rem;
@@ -200,12 +209,12 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
     }
-    
+
     .explore:hover {
       background: var(--accent-color);
       color: #000;
@@ -213,7 +222,7 @@
       box-shadow: 0 15px 25px rgba(0,0,0,0.3);
       animation: none;
     }
-    
+
     .explore::before {
       content: '';
       position: absolute;
@@ -224,11 +233,11 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
       transition: 0.5s;
     }
-    
+
     .explore:hover::before {
       left: 100%;
     }
-    
+
     .section {
       padding: 5rem 2rem;
       background-color: var(--bg-dark);
@@ -237,13 +246,13 @@
       transform: translateY(20px);
       transition: all 0.6s ease-out;
     }
-    
+
     .section.active {
       display: block;
       opacity: 1;
       transform: translateY(0);
     }
-    
+
     .section h2 {
       font-size: 2.2rem;
       margin-bottom: 2rem;
@@ -251,7 +260,7 @@
       text-align: center;
       position: relative;
     }
-    
+
     .section h2::after {
       content: '';
       display: block;
@@ -262,12 +271,12 @@
       border-radius: 2px;
       animation: expand 0.8s ease-out;
     }
-    
+
     @keyframes expand {
       from { width: 0; opacity: 0; }
       to { width: 80px; opacity: 1; }
     }
-    
+
     .section p {
       max-width: 800px;
       margin: 1.5rem auto;
@@ -277,11 +286,11 @@
       opacity: 0;
       transform: translateY(10px);
     }
-    
+
     @keyframes fadeInParagraphs {
       to { opacity: 1; transform: translateY(0); }
     }
-    
+
     .channel-card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
@@ -297,13 +306,13 @@
       animation: fadeInUp 0.6s ease-out forwards;
       animation-delay: calc(var(--card-index) * 0.2s);
     }
-    
+
     .channel-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
       border-color: var(--accent-color);
     }
-    
+
     .channel-name {
       font-size: 1.5rem;
       color: var(--accent-color);
@@ -312,35 +321,35 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     .channel-name i {
       margin-right: 10px;
-      color: #ff0000; /* YouTube red */
+      color: #ff0000;
     }
-    
+
     .channel-btn {
       display: inline-flex;
       align-items: center;
       margin-top: 1.5rem;
       padding: 0.7rem 1.8rem;
-      background: #ff0000; /* YouTube red */
+      background: #ff0000;
       color: white;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
     }
-    
+
     .channel-btn:hover {
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
       background: #cc0000;
     }
-    
+
     .channel-btn i {
       margin-right: 8px;
     }
-    
+
     .subscribe-cta {
       margin-top: 1.5rem;
       font-size: 1rem;
@@ -350,26 +359,26 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-    
+
     .subscribe-cta i {
       color: var(--accent-color);
       animation: bellRing 1s infinite;
     }
-    
+
     @keyframes bellRing {
       0%, 100% { transform: rotate(0); }
       10%, 30% { transform: rotate(-15deg); }
       20%, 40% { transform: rotate(15deg); }
       50% { transform: rotate(0); }
     }
-    
+
     .social-share {
       display: flex;
       justify-content: center;
       gap: 15px;
       margin-top: 1.5rem;
     }
-    
+
     .social-share-btn {
       display: flex;
       align-items: center;
@@ -381,17 +390,17 @@
       font-size: 0.9rem;
       transition: all 0.3s ease;
     }
-    
+
     .social-share-btn:hover {
       background: var(--accent-color);
       color: #000;
       transform: translateY(-3px);
     }
-    
+
     .social-share-btn i {
       margin-right: 5px;
     }
-    
+
     .social-icons {
       display: flex;
       justify-content: center;
@@ -399,7 +408,7 @@
       gap: 1.5rem;
       margin-top: 2rem;
     }
-    
+
     .social-icons a {
       display: inline-flex;
       align-items: center;
@@ -416,18 +425,18 @@
       opacity: 0;
       transform: scale(0.5) rotate(180deg);
     }
-    
+
     @keyframes socialIconEntrance {
       to { opacity: 1; transform: scale(1) rotate(0); }
     }
-    
+
     .social-icons a:hover {
       background: var(--accent-color);
       color: #000;
       transform: translateY(-8px) scale(1.1) rotate(5deg);
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
-    
+
     .social-icons a.threads {
       position: relative;
       background-image: url('threads.webp');
@@ -435,15 +444,15 @@
       background-position: center;
       background-repeat: no-repeat;
     }
-    
+
     .social-icons a.threads i {
       display: none;
     }
-    
+
     .social-icons a.twitter {
       background-color: #000000;
     }
-    
+
     footer {
       text-align: center;
       padding: 1.5rem;
@@ -451,16 +460,16 @@
       font-size: 0.9rem;
       animation: fadeIn 1s ease-out;
     }
-    
+
     @media (min-width: 768px) {
       h1 {
         font-size: 3.5rem;
       }
-      
+
       .tagline {
         font-size: 1.4rem;
       }
-      
+
       nav {
         display: flex;
         position: static;
@@ -468,16 +477,16 @@
         background: transparent;
         box-shadow: none;
       }
-      
+
       .menu-icon {
         display: none;
       }
-      
+
       nav a {
         margin-left: 1.5rem;
         padding: 0.5rem 1rem;
       }
-      
+
       nav a:hover {
         padding-left: 1rem;
       }
@@ -516,22 +525,22 @@
 
   <div id="channels" class="section">
     <h2>My YouTube Channels</h2>
-    
+
     <div class="channel-card" style="--card-index: 1;">
       <div class="channel-name">
         <i class="fab fa-youtube"></i> Travel With Shounak (Current)
       </div>
       <p>Tech content, tutorials, and innovation - my main channel where I share my latest creations!</p>
-      
+
       <div class="subscribe-cta">
         <i class="fas fa-bell"></i>
         <span>Subscribe and turn on notifications!</span>
       </div>
-      
+
       <a href="https://www.youtube.com/@travelwithshounak_7042" target="_blank" class="channel-btn">
         <i class="fab fa-youtube"></i> Visit Channel
       </a>
-      
+
       <div class="social-share">
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://youtube.com/@travelwithshounak_7042" target="_blank" class="social-share-btn">
           <i class="fab fa-facebook-f"></i> Share
@@ -544,22 +553,22 @@
         </a>
       </div>
     </div>
-    
+
     <div class="channel-card" style="--card-index: 2;">
       <div class="channel-name">
         <i class="fab fa-youtube"></i> Shounak Paul (Previous)
       </div>
       <p>My previous YouTube channel featuring earlier content and experiments that started my journey!</p>
-      
+
       <div class="subscribe-cta">
         <i class="fas fa-bell"></i>
         <span>Check out my earlier work!</span>
       </div>
-      
+
       <a href="https://www.youtube.com/@shounakpaul_7042" target="_blank" class="channel-btn">
         <i class="fab fa-youtube"></i> Visit Channel
       </a>
-      
+
       <div class="social-share">
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/@shounakpaul_7042" target="_blank" class="social-share-btn">
           <i class="fab fa-facebook-f"></i> Share
@@ -592,26 +601,18 @@
   </footer>
 
   <script>
-    // Show home section by default
     document.addEventListener('DOMContentLoaded', function() {
       showSection('home');
       document.getElementById('year').textContent = new Date().getFullYear();
-      
-      // Set paragraph animations
-      const paragraphs = document.querySelectorAll('#about p');
-      paragraphs.forEach((p, index) => {
+
+      // Set animations
+      document.querySelectorAll('#about p').forEach((p, index) => {
         p.style.setProperty('--paragraph-index', index + 1);
       });
-      
-      // Set social icon animations
-      const socialIcons = document.querySelectorAll('.social-icons a');
-      socialIcons.forEach((icon, index) => {
+      document.querySelectorAll('.social-icons a').forEach((icon, index) => {
         icon.style.setProperty('--icon-index', index + 1);
       });
-      
-      // Set channel card animations
-      const channelCards = document.querySelectorAll('.channel-card');
-      channelCards.forEach((card, index) => {
+      document.querySelectorAll('.channel-card').forEach((card, index) => {
         card.style.setProperty('--card-index', index + 1);
       });
     });
@@ -620,56 +621,22 @@
       const menu = document.getElementById("menu");
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
-    
+
     function showSection(sectionId) {
-      // Hide all sections
       document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
       });
       document.querySelector('.container').style.display = 'none';
-      
-      // Show selected section
+
       if (sectionId === 'home') {
         document.querySelector('.container').style.display = 'flex';
-        document.querySelector('.container').style.animation = 'fadeInScale 0.8s ease-out';
       } else {
-        const section = document.getElementById(sectionId);
-        section.classList.add('active');
-        
-        // Reset animations for elements in the section
-        if (sectionId === 'about') {
-          const paragraphs = section.querySelectorAll('p');
-          paragraphs.forEach((p, index) => {
-            p.style.animation = 'none';
-            setTimeout(() => {
-              p.style.animation = `fadeInParagraphs 0.6s ease-out ${index * 0.2}s forwards`;
-            }, 10);
-          });
-        } else if (sectionId === 'channels') {
-          const cards = section.querySelectorAll('.channel-card');
-          cards.forEach((card, index) => {
-            card.style.animation = 'none';
-            setTimeout(() => {
-              card.style.animation = `fadeInUp 0.6s ease-out ${index * 0.2}s forwards`;
-            }, 10);
-          });
-        } else if (sectionId === 'contact') {
-          const icons = section.querySelectorAll('.social-icons a');
-          icons.forEach((icon, index) => {
-            icon.style.animation = 'none';
-            setTimeout(() => {
-              icon.style.animation = `socialIconEntrance 0.6s ease-out ${index * 0.1}s forwards`;
-            }, 10);
-          });
-        }
+        document.getElementById(sectionId).classList.add('active');
       }
-      
-      // Close menu on mobile after selection
+
       if (window.innerWidth < 768) {
         document.getElementById('menu').style.display = 'none';
       }
-      
-      // Scroll to top
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
